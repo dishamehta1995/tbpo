@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+  h2 {
+    font-size: 1.875rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix fixed positioning on mobile */
+@media (max-width: 768px) {
+  nav {
+    z-index: 40 !important;
+  }
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: #c81c27;
+}
+
+@layer utilities {
+  .bg-gradient {
+    background: linear-gradient(180deg, #000000 0%, #140607 25%, #3f1719 60%, #7a2c2c 100%);
+  }
+
+  .bg-gradient-3-t {
+    /* background: linear-gradient(to top, #ffffff 0%, #fce4e5 60%, #efddde 100%); */
+    background: #f5eaea;
+  }
+  .bg-gradient-3-b {
+    /* background: linear-gradient(to bottom, #ffffff 0%, #fce4e5 60%, #efddde 100%); */
+    background: #f5eaea;
+  }
+  /* .bg-gradient-3-t {
+    background: linear-gradient(to top, #ffffff 0%, #f7f2fb 80%, #f6f2fb 60%);
+  }
+  .bg-gradient-3-b {
+    background: linear-gradient(to bottom, #ffffff 0%, #f7f2fb 80%, #f6f2fb 60%);
+  } */
+
+  .bg-gradient-2 {
+    background: linear-gradient(to bottom, #211b2c 0%, #4c292b 99%, #ce1c28 100%);
+  }
+
+  /* Responsive container padding */
+  .responsive-px {
+    @apply px-4 sm:px-6 md:px-8 lg:px-12;
+  }
+
+  /* Responsive spacing */
+  .responsive-py {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20;
+  }
+
+  /* Responsive gap */
+  .responsive-gap {
+    @apply gap-4 sm:gap-6 md:gap-8 lg:gap-12;
+  }
+
+  /* Responsive max width sections */
+  .max-w-responsive {
+    @apply max-w-full md:max-w-4xl lg:max-w-6xl;
+  }
+
+  /* Touch-friendly button size */
+  .btn-touch-friendly {
+    @apply min-h-12 min-w-12;
+  }
+
+  a,
+  button {
+    cursor: pointer;
+  }
+}
+
+/* Animations for mobile */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
